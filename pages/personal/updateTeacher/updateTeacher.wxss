@@ -1,0 +1,28 @@
+/* pages/personal/updateTeacher/updateTeacher.wxss */
+.mod-a{
+  padding: 0 20rpx;
+  border: 1px solid #f0f0f0;
+  background-color: #fff;
+}
+.input{
+  text-align: right;
+}
+.mod{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  height: 90rpx;
+  padding: 0 20rpx;
+}
+
+.create{
+  margin-top: 30rpx;
+  padding: 0 26rpx;
+}
+.createbtn{
+  height: 80rpx;
+  line-height: 80rpx;
+  background-color: #2fcc85;
+  color: #fff;
+}

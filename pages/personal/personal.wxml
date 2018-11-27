@@ -1,0 +1,103 @@
+<!--pages/personal/personal.wxml-->
+<view class="container">
+  <view class="userinfo">
+    <button wx:if="{{!hasUserInfo && canIUse}}" open-type="getUserInfo" bindgetuserinfo="getUserInfo"> 获取头像昵称 </button>
+    <block wx:else>
+      <image bindtap="" class="userinfo-avatar" src="{{userInfo.avatarUrl}}" mode="cover"></image>
+      <text class="userinfo-nickname">{{userInfo.nickName}}</text>
+    </block>
+  </view>
+</view>
+<view wx:if="{{weChatId==='2'}}">
+<!-- <view wx:for="{{teacher.data}}" wx:key="key"> -->
+<view class="mod-a">
+        <!-- 姓名 -->
+        <view class="mod t-name">
+            <text class="key">教师姓名</text>
+            <text class="input">{{teacher.name}}</text>
+        </view>         
+    </view>
+  
+    <view class="mod-a">
+        <!-- 联系方式 -->
+        <view class="mod t-name">
+            <text class="key">联系方式</text>
+            <text class="input">{{teacher.tel}}</text>
+        </view> 
+      </view>
+
+      <view class="mod-a">
+        <!-- 重置教师信息 -->
+        <view class="mod t-name" bindtap='gotoUpdateTeahcer'>
+            <text class="key">修改个人信息</text>
+            <text class="input">>>></text>
+        </view> 
+      </view>
+      <!-- </view>  -->
+      <view>
+<form class="page-body" bindsubmit="">
+<view class="blank"></view>
+    <view class="weui-cells weui-cells_after-title">
+      <view class="weui-cell weui-cell_input">
+        <view class="weui-cell__hd">
+          <view class="weui-label">课程名</view>
+        </view>
+        <view class="weui-cell__bd">
+          <input class="weui-input" type="text" placeholder="请输入课程名并点击发布" name="inputCourse" bindinput="setValue"></input>
+        </view>
+      </view>
+    </view>
+    <view class="mod-a">
+      </view>       
+        <view class="create">
+        <button class="createbtn" bindtap="giveCourse">发布课程</button>
+    </view>
+    <view class="blank"></view>
+    <!-- <view class="btn-area">
+      <button type="primary" formType="submit" bindtap='alertWindow'>生成签到码</button>
+    </view> -->
+    <view class="blank"></view>
+    <view class="course_info"><text wx:if="{{valueArr.length!=0}}">已发布课程：</text></view>
+    <view class="item" wx:for="{{valueArr}}" wx:key="{{index}}">
+    <text style='font-size:20px'>{{item.msg}}</text>
+    <icon class="close_icon" type='cancel' bindtap='delcourse' data-index="{{index}}"></icon>
+    </view>
+    </form>
+</view>
+</view>
+<view wx:elif="{{weChatId==='1'}}">
+<!-- <view wx:for="{{student.data}}" wx:key="key"> -->
+<view class="mod-a">
+        <!-- 姓名 -->
+        <view class="mod t-name">
+            <text class="key">姓名</text>
+            <text class="input">{{student.name}}</text>
+        </view>         
+    </view>
+  
+    <view class="mod-a">
+        <!-- 学号 -->
+        <view class="mod t-name">
+            <text class="key">学号</text>
+            <text class="input">{{student.num}}</text>
+        </view> 
+      </view> 
+      <!-- 院系 -->
+      <view class="mod-a">
+        <view class="mod t-name">
+            <text class="key">院系</text>
+            <text class="input">{{student.depart}}</text>
+        </view>  
+        </view> 
+        <view class="mod-a">
+        <!-- 专业 -->
+        <view class="mod t-name">
+            <text class="key">专业</text>
+            <text class="input">{{student.major}}</text>
+        </view>
+        </view> 
+        <!-- </view>      -->
+        <view class="create">
+        <button class="createbtn" bindtap="gotoUpdateInfo">修改个人信息</button>
+    </view>
+    </view>

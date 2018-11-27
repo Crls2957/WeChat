@@ -1,0 +1,20 @@
+<!--pages/personal/updateTeacher/updateTeacher.wxml-->
+<!-- <form bindsubmit='updateInfo'> -->
+<view class="mod-a">
+        <!-- 修改教师姓名 -->
+        <view class="mod t-name">
+            <text class="key">姓名</text>
+            <input class="input" name="name" bindinput='setName' placeholder='请输入姓名'></input>
+        </view>         
+    </view>
+<view class="mod-a">
+        <!-- 修改教师联系方式 -->
+        <view class="mod t-name">
+            <text class="key">联系方式</text>
+            <input class="input" name="tel" bindinput='setTel' placeholder='请输入联系方式'></input>
+        </view> 
+        </view>
+        <view class="create">
+        <button class="createbtn" bindtap='updateTeacher'>重置</button>
+    </view>
+  <!-- </form> -->
